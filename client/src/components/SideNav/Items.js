@@ -6,19 +6,33 @@ export const Student = [
     path: '/',
   },
   {
-    name: 'Course',
+    name: 'Profile',
     icon: faBook,
+    path: '/profile',
   },
   {
-    name: 'home',
+    name: 'Courses',
     icon: faBook,
+    path: '/courses',
   },
   {
-    name: 'home',
+    name: 'Subject',
     icon: faBook,
+    path: '/subject',
   },
   {
-    name: 'home',
+    name: 'Posts',
     icon: faBook,
+    path: 'posts',
+  },
+  {
+    name: 'Assignments',
+    icon: faBook,
+    path: '/assignments',
+  },
+  {
+    name: 'Merits',
+    icon: faBook,
+    path: '/merits',
   },
 ];
