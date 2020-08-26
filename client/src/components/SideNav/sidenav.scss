@@ -1,0 +1,16 @@
+.sideNav {
+  width: 100%;
+  position: relative;
+  .side {
+    position: fixed;
+    .item {
+      background: red;
+      width: 300px;
+      text-align: left;
+      padding: 10px 20px;
+      &:hover {
+        background: green;
+      }
+    }
+  }
+}
