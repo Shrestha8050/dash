@@ -2,10 +2,9 @@ import React from 'react';
 import './header.scss';
 import Logo from '../../Assets/logo/logo.png';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../Widgets/Icon';
 
-const element = <FontAwesomeIcon icon={faBars} />;
 const header = () => {
   return (
     <header>
@@ -16,7 +15,9 @@ const header = () => {
           </div>
         </Link>
 
-        <div className='barMenu'>{element}</div>
+        <div className='barMenu'>
+          <Icon icon={faBars} />
+        </div>
       </div>
     </header>
   );

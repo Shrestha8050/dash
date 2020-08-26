@@ -1,36 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 const Student = [
   {
-    name: 'home',
+    name: 'Home',
+    icon: 'ic',
+    path: '/',
+  },
+  {
+    name: 'Subject',
     icon: 'ic',
   },
   {
-    name: 'home',
+    name: 'Project',
     icon: 'ic',
   },
   {
-    name: 'home',
+    name: 'Course',
     icon: 'ic',
   },
   {
-    name: 'home',
-    icon: 'ic',
-  },
-  {
-    name: 'home',
+    name: 'Merits',
     icon: 'ic',
   },
 ];
-const SideItems = () => (
-  <>
-    {Student.map((menu, i) => {
-      return (
-        <li className='item' key={i}>
-          {menu.name}
-        </li>
-      );
-    })}
-  </>
-);
+const SideItems = () => {
+  return <></>;
+};
 
 export default SideItems;

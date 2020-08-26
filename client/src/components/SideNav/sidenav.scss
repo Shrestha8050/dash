@@ -3,13 +3,44 @@
   position: relative;
   .side {
     position: fixed;
+    list-style: none;
+    a {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
     .item {
-      background: red;
+      background: whitesmoke;
       width: 300px;
       text-align: left;
       padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      .item-name {
+        margin-left: 10px;
+      }
       &:hover {
         background: green;
+      }
+    }
+  }
+  .sliding {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 60px;
+    height: 40px;
+    transform: rotate(180deg);
+    svg {
+      width: 40px;
+      height: 40px;
+      background: transparent !important;
+      transition: 1s;
+      &:hover {
+        color: red;
+        transform: translate(-10px);
       }
     }
   }
