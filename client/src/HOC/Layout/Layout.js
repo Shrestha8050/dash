@@ -10,13 +10,17 @@ const Layout = (props) => {
   return (
     <div className='layout'>
       <Header />
+
       <div className='container-fluid p-0'>
         <CSSTransition in={open} timeout={800} classNames='col-body'>
           <div className='row no-gutters'>
             <div className={`${open ? 'col-md-3' : 'col-md-1'}`}>
               <SideNav open={open} setOpen={setOpen} />
             </div>
-            <div className={`${open ? 'col-md-9' : 'col-md-11'}`}>
+            <div
+              className={`${open ? 'col-md-9' : 'col-md-11'}`}
+              style={{ zIndex: '-1' }}
+            >
               {props.children}
             </div>
           </div>

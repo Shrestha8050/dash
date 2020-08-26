@@ -1,35 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './sidenav.scss';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-
+import { faListAlt } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../Widgets/Icon';
-import { faListAlt, faHome, faBook } from '@fortawesome/free-solid-svg-icons';
-const Student = [
-  {
-    name: 'Home',
-    icon: faHome,
-    path: '/',
-  },
-  {
-    name: 'Course',
-    icon: faBook,
-  },
-  {
-    name: 'home',
-    icon: faBook,
-  },
-  {
-    name: 'home',
-    icon: faBook,
-  },
-  {
-    name: 'home',
-    icon: faBook,
-  },
-];
+import { Student } from './Items';
 
 const Menu = ({ open, setOpen }) => {
+  const [menuHeight, setMenuHeight] = useState(null);
+  useEffect(() => {
+    const height = document.body.offsetHeight;
+    console.log(height);
+    setMenuHeight(height);
+  }, []);
   return (
     <div className='sideNav'>
       <ul className='side'>
@@ -38,7 +21,14 @@ const Menu = ({ open, setOpen }) => {
           timeout={800}
           classNames={`${open ? 'node-in' : 'node-out'}`}
         >
-          <div className='new' style={{ width: `${open ? '300px' : '100px'}` }}>
+          <div
+            className='new'
+            style={{
+              width: `${open ? '300px' : '100px'}`,
+              background: 'whitesmoke',
+              height: `${menuHeight}px`,
+            }}
+          >
             <div className='sliding' onClick={() => setOpen(!open)}>
               <Icon icon={faListAlt} />
             </div>

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './header.scss';
 import Logo from '../../Assets/logo/logo.png';
 import { Link } from 'react-router-dom';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../Widgets/Icon';
+import DropDown from '../Navigation/DropDown/DropDown';
 
-const header = () => {
+const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <header>
       <div className='header'>
@@ -15,12 +17,13 @@ const header = () => {
           </div>
         </Link>
 
-        <div className='barMenu'>
-          <Icon icon={faBars} />
+        <div className='barMenu' onClick={() => setOpen(!open)}>
+          <Icon icon={open ? faTimes : faBars} />
         </div>
       </div>
+      {open && <DropDown />}
     </header>
   );
 };
 
-export default header;
+export default Header;
