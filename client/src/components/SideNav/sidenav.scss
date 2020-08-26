@@ -13,7 +13,7 @@
     }
     .item {
       background: whitesmoke;
-      width: 300px;
+
       text-align: left;
       padding: 10px 20px;
       display: flex;
@@ -37,11 +37,60 @@
       width: 40px;
       height: 40px;
       background: transparent !important;
-      transition: 1s;
+
       &:hover {
         color: red;
-        transform: translate(-10px);
       }
     }
   }
+}
+
+.node-in-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.node-in-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.node-in-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.node-in-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.node-in-enter-active,
+.node-in-exit-active {
+  transition: opacity 500ms, transform 500ms;
+}
+
+.node-out-exit {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.node-out-exit-active {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.node-out-enter {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.node-out-enter-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.node-out-enter-active,
+.node-out-exit-active {
+  transition: opacity 500ms, transform 500ms;
+}
+
+.col-body-enter {
+  width: 90%;
+}
+.col-body-enter-active {
+  width: 100%;
+  transition: width 500ms;
 }
