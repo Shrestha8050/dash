@@ -1,0 +1,40 @@
+.login {
+  width: 100%;
+  padding: 20px;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  .left-form {
+    width: 50%;
+  }
+  .right-form {
+    width: 50%;
+    padding: 20px;
+    background: rgb(250, 249, 249);
+  }
+  form {
+    display: flex;
+
+    input {
+      width: 40%;
+      padding: 10px;
+      margin: auto 10px;
+      border: 0;
+      border-radius: 4%;
+      background: rgb(240, 240, 240);
+      &:focus {
+        outline-color: darkgreen;
+        background: palegreen;
+        color: black;
+      }
+    }
+  }
+  .btn-primary {
+    padding: 8px 40px;
+    border-radius: 5%;
+  }
+  .signup {
+    margin-top: 60px;
+  }
+}

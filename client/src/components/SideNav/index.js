@@ -7,12 +7,6 @@ import Icon from '../Widgets/Icon';
 import { Student } from './Items';
 
 const Menu = ({ open, setOpen }) => {
-  const [menuHeight, setMenuHeight] = useState(null);
-  useEffect(() => {
-    const height = document.body.offsetHeight;
-    console.log(height);
-    setMenuHeight(height);
-  }, []);
   return (
     <div className='sideNav'>
       <ul className='side'>
@@ -24,15 +18,14 @@ const Menu = ({ open, setOpen }) => {
           <div
             className='new'
             style={{
-              width: `${open ? '300px' : '100px'}`,
+              width: `${open ? '100%' : '75%'}`,
               background: 'whitesmoke',
-              height: `${menuHeight}px`,
+              height: '100vh',
             }}
           >
-            <div className='sliding' onClick={() => setOpen(!open)}>
-              <Icon icon={faListAlt} />
-            </div>
-
+            <li className='sliding'>
+              <Icon icon={faListAlt} onClick={() => setOpen(!open)} />
+            </li>
             {Student.map((menu, i) => (
               <Link to={`${menu.path}`} key={i}>
                 <li className='item'>

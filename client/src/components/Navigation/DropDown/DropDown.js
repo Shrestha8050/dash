@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import Icon from '../../Widgets/Icon';
+import {
+  faUser,
+  faCogs,
+  faSignOutAlt,
+  faArrowLeft,
+  faNewspaper,
+  faAngleRight,
+  faSignInAlt,
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 const DropDown = () => {
   const [activeMenu, setActiveMenu] = useState('main');
   const [menuHeight, setMenuHeight] = useState(null);
@@ -10,15 +21,19 @@ const DropDown = () => {
   };
   const DropDownItems = (props) => {
     return (
-      <a
-        href='#'
+      <Link
+        to={props.url}
         className='menu-item'
         onClick={() => props.gotToMenu && setActiveMenu(props.gotToMenu)}
       >
-        <span className='icon-left'>{props.leftIcon}</span>
-        {props.children}
-        <span className='icon-right'>{props.rightIcon}</span>
-      </a>
+        <div className='left-part'>
+          <Icon icon={props.leftIcon} />
+          <span>{props.children}</span>
+        </div>
+        <div className='right-part'>
+          <Icon icon={props.rightIcon} />
+        </div>
+      </Link>
     );
   };
   return (
@@ -31,8 +46,25 @@ const DropDown = () => {
         onEnter={calcHeight}
       >
         <div className='menu'>
-          <DropDownItems>My Profile</DropDownItems>
-          <DropDownItems gotToMenu='settings'>Setting</DropDownItems>
+          <DropDownItems leftIcon={faUser} url='/profile'>
+            My Profile
+          </DropDownItems>
+          <DropDownItems leftIcon={faNewspaper} url='/posts'>
+            Posts
+          </DropDownItems>
+          <DropDownItems
+            gotToMenu='settings'
+            leftIcon={faCogs}
+            rightIcon={faAngleRight}
+          >
+            Setting
+          </DropDownItems>
+          <DropDownItems leftIcon={faSignInAlt} url='/login'>
+            LogIn
+          </DropDownItems>
+          <DropDownItems leftIcon={faSignOutAlt} url='/logout'>
+            Logout
+          </DropDownItems>
         </div>
       </CSSTransition>
       <CSSTransition
@@ -43,16 +75,17 @@ const DropDown = () => {
         onEnter={calcHeight}
       >
         <div className='menu'>
-          <DropDownItems gotToMenu='main'>My Back</DropDownItems>
-
-          <DropDownItems>My Settings</DropDownItems>
-          <DropDownItems>My Settings</DropDownItems>
-          <DropDownItems>My Settings</DropDownItems>
-          <DropDownItems>My Settings</DropDownItems>
-          <DropDownItems>My Settings</DropDownItems>
-          <DropDownItems>My Settings</DropDownItems>
-          <DropDownItems>My Settings</DropDownItems>
-          <DropDownItems>My Settings</DropDownItems>
+          <DropDownItems gotToMenu='main' leftIcon={faArrowLeft}>
+            Go Back
+          </DropDownItems>
+          <DropDownItems url='/profile'>My Settings</DropDownItems>
+          <DropDownItems url='/profile'>Course</DropDownItems>
+          <DropDownItems url='/profile'>as</DropDownItems>
+          <DropDownItems url='/profile'>My Settings</DropDownItems>
+          <DropDownItems url='/profile'>My Settings</DropDownItems>
+          <DropDownItems url='/profile'>My Settings</DropDownItems>
+          <DropDownItems url='/profile'>My Settings</DropDownItems>
+          <DropDownItems url='/profile'>My Settings</DropDownItems>
         </div>
       </CSSTransition>
     </div>

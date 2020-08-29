@@ -1,0 +1,29 @@
+.assignments {
+  padding: 20px;
+  .assignmnet {
+    .title {
+      font-size: large;
+    }
+    .check {
+      display: flex;
+      h6 {
+        display: inline-block;
+        margin: 20px;
+        background: red;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .yes {
+        &:hover {
+          background: darkgreen;
+        }
+      }
+      .no {
+        &:hover {
+          background: darkred;
+        }
+      }
+    }
+  }
+}

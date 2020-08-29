@@ -1,11 +1,11 @@
 import React from 'react';
 
-const index = () => {
+const Post = () => {
   return (
-    <div>
+    <div className='post'>
       <h1>Posts</h1>
     </div>
   );
 };
 
-export default index;
+export default Post;
